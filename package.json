@@ -1,0 +1,35 @@
+{
+  "name": "w3pn-web",
+  "type": "module",
+  "version": "1.3.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "cleanup-flags": "deno run --allow-all utils/cleanup-flags.js",
+    "preview": "astro preview",
+    "astro": "astro",
+    "core": "deno run --allow-all utils/core.js",
+    "contribs": "deno run --allow-all utils/contributors.js",
+    "articles": "deno run --allow-all utils/articles.js",
+    "talks": "deno run --allow-all utils/talks.js",
+    "explorer": "deno run --allow-all utils/explorer.js",
+    "events-ext": "deno run --allow-all utils/events-ext.js",
+    "db-repo": "deno run --allow-all utils/db-repo.js",
+    "gen-images": "deno run --allow-all utils/gen-images.js",
+    "dependency-fix": "npm fund && npm audit fix --force",
+    "sync-all": "npm run core && npm run contribs && npm run articles && npm run talks && npm run explorer && npm run events-ext && npm run db-repo"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^5.2.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@rollup/plugin-yaml": "^4.1.2",
+    "astro": "^4.5.5",
+    "cfonts": "^3.2.0",
+    "date-fns": "^2.30.0",
+    "marked": "^11.1.1",
+    "svelte": "^4.2.12",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}

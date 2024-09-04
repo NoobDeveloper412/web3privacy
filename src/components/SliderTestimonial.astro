@@ -1,0 +1,98 @@
+---
+const testimonials = [
+  {
+    author: "Matteo",
+    text: `balance between Transparency and Privacy, accountable and unaccountable, manifest and secret, convex and concave, 1 and 0 is one of the most fun puzzles blockchain tech has to solve for the world. W3P community approaches this with incredible humility and a unravel-the-knot open debate approach. Also I like how they dress.`,
+    imageUrl: "/review.png",
+  },
+  {
+    author: "Jane",
+    text: `This platform has opened my eyes to the potential of blockchain technology in a way that I never imagined. The community is vibrant and full of innovation.`,
+    imageUrl: "/review.png",
+  },
+  {
+    author: "Alex",
+    text: `It's amazing to see how much transparency can coexist with privacy, and this is the best representation of how it can work. Great work!`,
+    imageUrl: "/review.png",
+  },
+  // Add more testimonials if needed
+];
+
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+  currentTestimonial = index;
+}
+---
+
+<div class="w-full mx-auto px-8 border-2 border-[#202020]">
+  <div class="relative">
+    <div class="flex items-center justify-center overflow-hidden">
+      <div>
+        <img
+          src={testimonials[currentTestimonial].imageUrl}
+          alt="Review Image"
+        />
+      </div>
+      <div class="relative lg:w-9/12">
+        <div class="relative py-12 px-8 text-gray-700 leading-relaxed">
+          <h2 class="font-bold">{testimonials[currentTestimonial].author}:</h2>
+          <p class="leading-tight">
+            "{testimonials[currentTestimonial].text}"
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="absolute inset-y-0 left-0 lg:flex lg:items-center">
+      <button
+        class="mt-24 lg:mt-0 -ml-6 h-12 w-12 rounded-full p-3 shadow-lg"
+        onClick={() =>
+          showTestimonial(
+            (currentTestimonial - 1 + testimonials.length) % testimonials.length
+          )}
+      >
+        <svg
+          class="h-full w-full text-white"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M5.41 11H21a1 1 0 0 1 0 2H5.41l5.3 5.3a1 1 0 0 1-1.42 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.42 1.4L5.4 11z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div class="absolute inset-y-0 right-0 lg:flex lg:items-center">
+      <button
+        class="mt-24 lg:mt-0 -mr-6 h-12 w-12 rounded-full p-3 shadow-lg"
+        onClick={() =>
+          showTestimonial((currentTestimonial + 1) % testimonials.length)}
+      >
+        <svg
+          class="h-full w-full text-white"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M18.59 13H3a1 1 0 0 1 0-2h15.59l-5.3-5.3a1 1 0 1 1 1.42-1.4l7 7a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.42-1.4l5.3-5.3z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <div
+      class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
+    >
+      {
+        testimonials.map((_, index) => (
+          <button
+            class={`h-3 w-3 rounded-full ${index === currentTestimonial ? "bg-white" : "bg-transparent border"}`}
+            onClick={() => showTestimonial(index)}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>

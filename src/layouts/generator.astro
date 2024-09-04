@@ -1,0 +1,49 @@
+---
+
+const { title } = Astro.props;
+
+---
+
+<html>
+<head>
+    <title>W3PN Gen | {title}</title>
+    <link
+        rel="preload"
+        href="/fonts/dm-mono-regular-latin.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+    />
+    <link
+        rel="preload"
+        href="/fonts/KyivTypeSerif-Medium3.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+    />
+    <style>
+        @font-face {
+            font-family: 'KyivTypeSerif';
+            src: url(/fonts/KyivTypeSerif-Medium3.woff2) format('woff2');
+        }
+    </style>
+</head>
+<body class="bg-[#F0F0F0] text-black font-mono">
+
+    <div class="pl-10 pt-10 pb-0">
+
+        <h1 class="text-4xl">W3PN Image Generator</h1>
+        <div class="mt-4 flex gap-4 mb-10">
+            <a href="/gen/event" class="underline hover:no-underline">Events</a>
+            <!--a href="/gen/research" class="underline hover:no-underline">Researches</a>
+            <a href="/gen/article" class="underline hover:no-underline">Articles</a>
+            <a href="/gen/video" class="underline hover:no-underline">Videos</a-->
+        </div>
+
+        <h2 class="text-3xl">{title}</h1>
+    </div>
+
+    <slot />
+
+</body>
+</html>

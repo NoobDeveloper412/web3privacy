@@ -1,0 +1,15 @@
+---
+const { images } = Astro.props; // Array of image URLs passed as props
+---
+
+<div class="flex flex-wrap gap-[3px]">
+  {images.map((image, index) => (
+    <div class="flex-auto overflow-hidden" key={index}>
+      <img
+        class="object-cover w-full h-[243px]"
+        src={image}
+        alt={`Image ${index + 1}`}
+      />
+    </div>
+  ))}
+</div>

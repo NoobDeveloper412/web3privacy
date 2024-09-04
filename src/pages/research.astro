@@ -1,0 +1,61 @@
+---
+
+import BaseLayout from '../layouts/base.astro';
+import core from '../core.json';
+import ResearchItem from '../components/ResearchItem.astro';
+
+function filterResearch(status) {
+	return core.research.filter(r => r.status === status).sort((x, y) => x.sort > y.sort ? 1 : -1)
+}
+
+const live = filterResearch('live')
+const upcoming = filterResearch('in-progress')
+const deprecated = filterResearch('deprecated')
+const backlog = filterResearch('backlog')
+
+---
+
+<BaseLayout title="Research" image="og_research">
+
+	<div class="middle-pane-medium mt-10">
+
+		<div class="grid-cols-2 gap-4">
+			<div class="mb-12 row-span-2">
+				<h1 id="live">Delivered researches ({live.length})</h1>
+				{live.map((item) => (
+					<ResearchItem {item} />
+				))}
+			</div>
+
+
+			<div class="mb-12">
+				<h1 id="upcoming">Upcoming researches ({upcoming.length})</h1>
+				{upcoming.map((item) => (
+					<ResearchItem {item} />
+				))}
+			</div>
+
+		</div>
+
+		<div class="mb-12">
+			<h1 id="backlog">Research Backlog ({backlog.length})</h1>
+			{backlog.map((item) => (
+				<ResearchItem {item} />
+			))}
+		</div>
+
+		{deprecated.length > 0 &&
+			<div class="mb-12">
+				<h1 id="deprecated">Deprecated researches ({deprecated.length})</h1>
+				{deprecated.map((item) => (
+					<ResearchItem {item} />
+				))}
+			</div>
+		}
+
+		<p class="mt-10">
+			<a href="https://github.com/orgs/web3privacy/projects/11" class="hover:underline">Source project</a>
+		</p>
+	</div>
+
+</BaseLayout>
