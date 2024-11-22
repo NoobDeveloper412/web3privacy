@@ -51,7 +51,11 @@
       "robert",
       "cat",
       "odd",
-      "mf"
+      "mf",
+      "jensei",
+      "andreea",
+      "ann-brody",
+      "alina"
     ]
   },
   "members": [
@@ -1105,6 +1109,15 @@
       }
     },
     {
+      "id": "andreea",
+      "name": "Andreea",
+      "caption": "Harmonizer",
+      "refs": {
+        "twitter": "iandreeacia"
+      },
+      "imageUrl": "https://web3privacy.info/core-contributors/andreea.png"
+    },
+    {
       "id": "emanuele-russo",
       "name": "Emanuele Russo",
       "caption": "Human Rights Education Expert, [Amnesty Italia](https://www.amnesty.it/) former Chairperson, [Hate Trackers](https://www.hate-trackers.it/) Inventor",
@@ -1163,6 +1176,15 @@
         "128": "https://data.web3privacy.info/img/people/thumbs/silke-noa-128px.webp",
         "400": "https://data.web3privacy.info/img/people/thumbs/silke-noa-400px.webp"
       }
+    },
+    {
+      "id": "alina",
+      "name": "Alina",
+      "caption": "Chaos Ops & Artful Maverick",
+      "refs": {
+        "twitter": "alinalatinina"
+      },
+      "imageUrl": "https://web3privacy.info/core-contributors/alina.png"
     },
     {
       "id": "kurt-opsahl",
@@ -1666,6 +1688,15 @@
       }
     },
     {
+      "id": "jensei",
+      "name": "Jensei",
+      "caption": "Moloch Challenger",
+      "refs": {
+        "twitter": "jensei_"
+      },
+      "imageUrl": "https://web3privacy.info/core-contributors/jensei.png"
+    },
+    {
       "id": "max-hampshire",
       "name": "Max Hampshire",
       "caption": "Senior devrel of [Nym](https://nymtech.net/), Cofounder of [terra0](https://terra0.org/)",
@@ -1684,6 +1715,7 @@
       "id": "ann-brody",
       "name": "Ann Brody",
       "caption": "Independent Researcher McGill University",
+      "job": "Research & Advocacy",
       "country": "us",
       "refs": {
         "twitter": "annbrody7"
